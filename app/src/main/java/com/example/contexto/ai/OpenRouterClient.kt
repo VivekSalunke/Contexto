@@ -7,11 +7,12 @@ import io.ktor.client.request.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.Json
 import android.util.Log
+import com.example.contexto.BuildConfig
 
 object OpenRouterClient {
 
     private const val BASE_URL = "https://openrouter.ai/api/v1/chat/completions"
-    private const val API_KEY = "YOUR_OPENROUTER_API_KEY" // ⚠️ Store securely in BuildConfig later
+    private val API_KEY = BuildConfig.OPENROUTER_API_KEY
 
     private val client = HttpClient {
         install(ContentNegotiation) {

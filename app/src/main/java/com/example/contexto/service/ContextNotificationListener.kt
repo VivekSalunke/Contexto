@@ -26,6 +26,7 @@ class ContextNotificationListener : NotificationListenerService() {
 
         if (title.isNotEmpty() && text.isNotEmpty()) {
             Log.d(TAG, "Captured from $packageName: $title - $text")
+            Log.d(TAG, "Sending payload to OpenRouter using llama-3.1-8b-instruct:free...")
             
             serviceScope.launch {
                 val actionTask = OpenRouterClient.analyzeText(title, text)
